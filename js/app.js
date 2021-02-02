@@ -1,13 +1,15 @@
 const 
   url = 'https://600ff44f6c21e1001704fac2.mockapi.io/minor-web/api/squads/1/teams/1/members',
-  container = document.querySelector('main')
+  container = document.querySelector('main'),
+  browserType = window.navigator.userAgent,
+  correctBrowser = browserType.includes('Chrome') || browserType.includes('Firefox')
 
 fetch(url)
   .then(
     (res) => {
       res.json().then((data) => {
         createNameElements(data)
-        createCardAnimations()
+        correctBrowser ? createCardAnimations() : tellTheUserAboutTheirReallyShittyBrowser()
       })
     }
   )
@@ -56,4 +58,8 @@ const createCardAnimations = () => {
       card.style.transform = 'perspective(1000px) scale(1) rotateX(0) rotateY(0)'
     })
   })
+}
+
+const tellTheUserAboutTheirReallyShittyBrowser = () => {
+  alert('Please use a proper browser like Firefox or Chrome to get the most out of this website')
 }
