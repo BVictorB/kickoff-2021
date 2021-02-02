@@ -1,14 +1,139 @@
-:root {
-  --primary:#FFF;
-  --secondary:#000;
-}
-
 * {
-  box-sizing:border-box;
+  box-sizing: border-box;
   scroll-behavior: smooth;
+  font-family: 'VT323', monospace;
+  margin: 0;
 }
 
 html {
-  background: var(--secondary);
-  color: var(--primary);
+  color: #fafafa;
+}
+
+a, a:hover, a:focus, a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+svg {
+  width: 200px;
+  margin: 40px auto 12px;
+  display: block;
+}
+
+.robot {
+  animation: floating 1s ease-in-out infinite alternate;
+}
+
+.gear {
+  top: 100px;
+  width: 400px;
+  position: fixed;
+  animation: spinning 15s linear infinite;
+  z-index: -2;
+}
+
+.gear:nth-of-type(1) {
+  left: -220px;
+}
+
+.gear:nth-of-type(2) {
+  right: -220px;
+}
+
+@keyframes spinning {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes floating {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(15px);
+  }
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  width: 300px;
+  height: 300px;
+  margin: 25px;
+  padding: 30px;
+  background: #263238;
+  border-radius: 30px;
+  transition: transform 100ms;
+  box-shadow: 0px 0px 30px rgba(0,0,0, 0.6);
+  text-align: center;
+  cursor: pointer;
+}
+
+.card h2 {
+  pointer-events: none;
+  font-size: 32px;
+  margin: 24px 0 0;
+}
+
+.card img {
+  pointer-events: none;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 18px auto 0;
+  display: block;
+  box-shadow: 0px 0px 30px rgba(0,0,0, 0.6);
+}
+
+
+footer {
+  background: #263238;
+  margin-top: 32px;
+  padding: 24px 0;
+}
+
+footer h2 {
+  font-size: 32px;
+  text-align: center;
+}
+
+.cls-1 {
+  fill: #e8505b;
+}
+
+.cls-2,
+.cls-6 {
+  fill: #263238;
+}
+
+.cls-3 {
+  fill: #fafafa;
+}
+
+.cls-4 {
+  opacity: 0.4;
+}
+
+.cls-5 {
+  fill: #fff;
+}
+
+.cls-6 {
+  font-size: 151.41px;
+  font-family: VT323-Regular, VT323;
+}
+
+.cls-7 {
+  font-size: 151.41px;
+  font-family: VT323-Regular, VT323;
+  fill: #fafafa;
 }
