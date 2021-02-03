@@ -32,6 +32,10 @@ svg {
   z-index: -2;
 }
 
+.robot-eyes {
+  animation: eyeblink 8s linear infinite;
+}
+
 .gear:nth-of-type(1) {
   left: -420px;
 }
@@ -55,6 +59,15 @@ svg {
   }
   to {
     transform: translateY(15px);
+  }
+}
+
+@keyframes eyeblink {
+  0% {
+    fill: #263238;
+  }
+  3% {
+    fill: #fff;
   }
 }
 
