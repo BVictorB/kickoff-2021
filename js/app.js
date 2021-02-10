@@ -20,7 +20,7 @@ fetch(url)
 const createNameElements = (data) => {
   data.forEach(data => {
     const anchor = document.createElement('a')
-    anchor.href = data.url
+    anchor.href = `https://github.com/${data.githubHandle}`
     anchor.target = '_blank'
 
     const person = document.createElement('div')
