@@ -6,13 +6,16 @@ const messages = document.querySelector('#messages')
 
 form.addEventListener('submit', (e) => {
   e.preventDefault()
-  socket.emit('chat', {
-    name: username.value,
-    message: message.value
-  })
-  username.style.display = 'none'
-  message.value = ''
+  if (message.value) {
+    socket.emit('chat', {
+      name: username.value,
+      message: message.value
+    })
+    username.style.display = 'none'
+    message.value = ''
+  }
 })
+
 
 socket.on('chat', data => {
   const el = document.createElement('li')
@@ -26,4 +29,5 @@ socket.on('chat', data => {
   el.appendChild(name)
   el.appendChild(message)
   messages.appendChild(el)
+  messages.scrollTop = messages.scrollHeight
 })
