@@ -149,3 +149,11 @@ footer h2 {
   font-family: VT323-Regular, VT323;
   fill: #fafafa;
 }
+
+#messages li {
+  color: black;
+}
+
+.own-name {
+  text-align: right;
+}
